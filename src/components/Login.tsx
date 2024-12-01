@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { Calendar, Heart } from "lucide-react";
 import { useRouter } from 'next/navigation';
+import WelcomeHeader from './WelcomeHeader';
 
 const AnniversaryLogin = () => {
   const [date, setDate] = useState("");
@@ -39,9 +40,7 @@ const AnniversaryLogin = () => {
               <Heart className="w-8 h-8 text-background" />
             </div>
           </div>
-          <h1 className="text-2xl font-semibold text-primary">
-            Welcome Back, Love
-          </h1>
+          <WelcomeHeader />
           <p className="text-accent">
             Enter our special day to continue
           </p>

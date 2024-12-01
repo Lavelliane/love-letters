@@ -14,6 +14,7 @@ import {
  SelectItem,
 } from "@nextui-org/react";
 import { addLoveLetter, createWeek } from '../_actions';
+import dayjs from 'dayjs';
 
 interface Week {
  id: string;
@@ -52,7 +53,7 @@ const AddLetterModal = ({ isOpen, onClose, weeks }: AddLetterModalProps) => {
        content,
        authorId: 'user123',
        author,
-       openDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+       openDate: dayjs().endOf('week').toDate(),
        weekId: targetWeekId
      });
 
