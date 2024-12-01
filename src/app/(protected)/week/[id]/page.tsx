@@ -52,7 +52,7 @@ async function WeekPage({ params }: { params: { id: string } }) {
           const letterDate = dayjs(letter.openDate).tz(manilaTimezone).startOf('day')
           if (manilaCurrentDate.isBefore(letterDate)) {
             return (
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center" key={letter.id}>
                 <p className="text-lg font-medium text-primary">
                   Letter will open on {dayjs(letterDate).format('MMM D, YYYY')}
                 </p>
