@@ -25,7 +25,9 @@ export default function ShowLetters({ initialValue = false, weekLetters }: ShowL
   const [showLetters, setShowLetters] = useState(false)
   return (
     <>
-      <Switch isSelected={showLetters} onValueChange={setShowLetters}>Show letters</Switch>
+      <Switch isSelected={showLetters} onValueChange={setShowLetters}>
+        <p className="text-primary">Show letters</p>
+      </Switch>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {weekLetters.length > 0 && weekLetters.map((letter) => {
           const letterDate = dayjs(letter.openDate).tz(manilaTimezone).startOf('day')
